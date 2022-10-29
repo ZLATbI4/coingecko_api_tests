@@ -4,4 +4,6 @@ module.exports = {
     ],
     spec: './test/**/*.test.ts',
     timeout: 60000,
+    parallel: true,
+    jobs: 4
 }
