@@ -1,0 +1,17 @@
+name: Nightly tests run
+
+on:
+  schedule:
+    - cron: "0 0 * * *"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get current date
+        id: date
+        run: echo TAG_NAME=nightly-tests-run-$(date '+%Y-%m-%d') >> $GITHUB_ENV
+      - name: Build the Docker image ${{ env.TAG_NAME }}
+        run: docker build . --file Dockerfile --tag ${{ env.TAG_NAME }}
+      - name: Run autotests
+        run: docker run ${{ env.TAG_NAME }} 

@@ -1,0 +1,25 @@
+{
+  "name": "coingecko_api_tests",
+  "version": "1.0.0",
+  "description": "TypeScript API testing framework for CoinGecko API",
+  "scripts": {
+    "pretest": "rm -rf allure-results && npm install",
+    "test": "mocha --reporter mocha-multi-reporters --reporter-options configFile=reporterConfig.json",
+    "report": "./.allure/bin/allure serve allure-results",
+    "full": "npm test && npm run report"
+  },
+  "dependencies": {
+    "@types/chai": "^4.3.3",
+    "@types/mocha": "^10.0.0",
+    "@types/node": "^18.11.7",
+    "allure-mocha": "^2.0.0-beta.19",
+    "axios": "^1.1.3",
+    "chai": "^4.3.6",
+    "mocha": "^10.0.0",
+    "mocha-multi-reporters": "^1.5.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.8.4"
+  },
+  "author": "Y. Zlatov",
+  "license": "MIT"
+}

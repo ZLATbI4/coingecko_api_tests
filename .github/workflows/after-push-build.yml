@@ -1,0 +1,20 @@
+name: After push/merge tests run
+
+on:
+  push:
+    branches: [ "*" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Get current date
+      run: echo TAG_NAME=build-$(date '+%Y-%m-%d_%H%M%S') >> $GITHUB_ENV
+    - name: Build the Docker image ${{ env.TAG_NAME }}
+      run: docker build . --file Dockerfile --tag ${{ env.TAG_NAME }}
+    - name: Run autotests
+      run: docker run ${{ env.TAG_NAME }}
+      
