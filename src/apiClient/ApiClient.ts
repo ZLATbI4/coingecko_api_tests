@@ -1,5 +1,5 @@
 import axios, {AxiosInstance} from "axios";
-import {URLSearchParams} from "url";
+import type {URLSearchParams} from "url";
 
 export class ApiClient{
     private axiosInstance: AxiosInstance;
