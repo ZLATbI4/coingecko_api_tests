@@ -1,7 +1,9 @@
-# CoinGecko API autotests
-<hr>
+<h1 align="center">CoinGecko API autotests</h1>
+
+[![After push/merge tests run](https://github.com/ZLATbI4/coingecko_api_tests/actions/workflows/after-push-build.yml/badge.svg)](https://github.com/ZLATbI4/coingecko_api_tests/actions/workflows/after-push-build.yml)
 
 [API doc](https://www.coingecko.com/en/api/documentation)
+<hr>
 
 ### How to run tests?
 
