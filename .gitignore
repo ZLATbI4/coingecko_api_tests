@@ -1,6 +1,7 @@
 .temp/
 allure-results
 .idea
+.DS_Store
 
 # Logs
 logs
