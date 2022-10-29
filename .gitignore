@@ -1,5 +1,6 @@
 .temp/
 allure-results
+.idea
 
 # Logs
 logs
